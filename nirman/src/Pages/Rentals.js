@@ -2,13 +2,12 @@ import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-export default function Community() {
+export default function Rentals() {
     return (
         <>
             <Header />
-            <h1>Coummunity Page</h1>
+            <h1>Rentals Page</h1>
             <Footer />
-
         </>
     )
 }

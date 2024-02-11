@@ -6,7 +6,7 @@ export default function Market() {
   return (
     <>
       <Header />
-      
+      <h1>Market Page</h1>
       <Footer />
 
     </>

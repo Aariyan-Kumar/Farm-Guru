@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './images/logo.jpeg';
 import avatar from './images/avatar.png'
 import './Header.css';
+import { NavLink } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -13,14 +14,14 @@ export default function Home() {
                 </div>
                 <div className="link-cont">
                     <ul>
-                        <li className='nav-link'><a href="#home">Home</a></li>
-                        <li className='nav-link'><a href="#Weather">Weather</a></li>
-                        <li className='nav-link'><a href="#community">Community</a></li>
-                        <li className='nav-link'><a href="#Market">Market</a></li>
-                        <li className='nav-link'><a href="#Rentals">Rentals</a></li>
-                        <li className='nav-link'><a href="#Tutorials">Tutorilas</a></li>
-                        <li className='nav-link'><a href="#About Us">About us</a></li>
-                        <li className="nav-link"><a href="#Login"><img className="l-img" src={avatar} alt="avatar logo" /></a></li>
+                        <li className='nav-link'><NavLink to="/">Home</NavLink></li>
+                        <li className='nav-link'><NavLink to="/Weather">Weather</NavLink></li>
+                        <li className='nav-link'><NavLink to="/Community">Community</NavLink></li>
+                        <li className='nav-link'><NavLink to="/Market">Market</NavLink></li>
+                        <li className='nav-link'><NavLink to="/Rentals">Rentals</NavLink></li>
+                        <li className='nav-link'><NavLink to="/Tutorials">Tutorilas</NavLink></li>
+                        <li className='nav-link'><NavLink to="/about">About us</NavLink></li>
+                        <li className="nav-link"><NavLink to="/Login"><img className="l-img" src={avatar} alt="avatar logo" /></NavLink></li>
                     </ul>
                 </div>
             </div>
