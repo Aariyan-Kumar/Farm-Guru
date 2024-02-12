@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import Cartshop from '../Components/Cartshop';
-import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Button, Form } from 'react-bootstrap';
 import './Market.css'
 import s1 from './images/img-s-1.jpg';
 import s2 from './images/img-s-2.jpg';
@@ -63,23 +63,21 @@ export default function Market() {
               </Carousel.Item>
             </Carousel>
             <div>
-              <Row>
+              <Row className='m-0'>
                 <Col xs={10}>
-                  <input type="text" placeholder='Search...' className='mt-4 rounded-2 ' />
-                  <Button variant='' className='mx-2 border border-2 border-success p-0 m-0'>🔍</Button>
-
+                  <Form className="d-flex my-3" >
+                    <Form.Control
+                      type="search"
+                      placeholder="Search"
+                      className="me-2"
+                      aria-label="Search"
+                    />
+                    <Button variant="outline-success">Search</Button>
+                  </Form>
                 </Col>
                 <Col xs={2}>
                   <Button variant='' className='mx-2 border border-2 border-success p-0 mt-4'>🛒</Button>
                 </Col>
-              </Row>
-              <Row className='m-0'>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
               </Row>
               <Row className='m-0'>
                 <Col xs={2}><Cartshop /></Col>
