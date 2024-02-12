@@ -1,26 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import 'bootstrap/dist/css/bootstrap.css';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Weather() {
+    const [weatherData, setWeatherData] = useState(null);
+
+    useEffect(() => {
+        // Fetch weather data from API and set it to the state
+        // Example: fetchWeatherData();
+    }, []);
+
     return (
         <>
             <Header />
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://t3.ftcdn.net/jpg/05/02/18/64/360_F_502186443_Kubg3Wl76uE8BYl1tcAuYYXgGKAaO6r4.jpg" />
-                <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
+            {weatherData && (
+                <div className="container">
+                    <h1 className="mt-4 mb-4">Weather Forecast</h1>
+                    <Card className="mb-4">
+                        <Card.Body>
+                            <Card.Title>Today's Weather</Card.Title>
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <p><strong>Temperature:</strong> {weatherData.temperature}°C</p>
+                                    <p><strong>Feels Like:</strong> {weatherData.feelsLike}°C</p>
+                                    <p><strong>Humidity:</strong> {weatherData.humidity}%</p>
+                                    <p><strong>Precipitation:</strong> {weatherData.precipitation}%</p>
+                                    <p><strong>Wind Speed:</strong> {weatherData.windSpeed} km/h</p>
+                                </div>
+                                <div className="col-md-8">
+                                    <Card.Img src={weatherData.weatherIcon} alt="Weather Icon" />
+                                </div>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                    <Button variant="primary">Refresh</Button>
+                </div>
+            )}
             <Footer />
         </>
-    )
+    );
 }
