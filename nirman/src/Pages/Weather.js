@@ -6,8 +6,6 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Weather() {
-    const i=50;
-    console.log(i);
     return (
         <>
             <Header />
