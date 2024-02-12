@@ -76,8 +76,16 @@ export default function Market() {
                   </Form>
                 </Col>
                 <Col xs={2}>
-                  <Button variant='' className='mx-2 border border-2 border-success p-0 mt-4'>🛒</Button>
+                  <Button className='mt-3 d-flex' variant='outline-success' href="#"><span className='mx-auto'>Cart 🛒</span></Button>
                 </Col>
+              </Row>
+              <Row className='m-0'>
+                <Col xs={2}><Cartshop /></Col>
+                <Col xs={2}><Cartshop /></Col>
+                <Col xs={2}><Cartshop /></Col>
+                <Col xs={2}><Cartshop /></Col>
+                <Col xs={2}><Cartshop /></Col>
+                <Col xs={2}><Cartshop /></Col>
               </Row>
               <Row className='m-0'>
                 <Col xs={2}><Cartshop /></Col>
