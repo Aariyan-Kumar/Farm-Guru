@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -8,9 +8,26 @@ import './Market.css'
 import s1 from './images/img-s-1.jpg';
 import s2 from './images/img-s-2.jpg';
 import s3 from './images/img-s-3.jpg';
+import vdata from '../Components/vdata';
+import fdata from '../Components/fdata';
 
+function ncard(val) {
+  return (
+    <Col xs={2}>
+      <Cartshop
+        imgsrc={val.imgsrc}
+        tittle={val.Title}
+        price={val.price}
+      />
+    </Col>
+  )
+}
 
 export default function Market() {
+
+  const [active, setactive] = useState("veg");
+
+
   return (
     <>
       <Header />
@@ -21,9 +38,9 @@ export default function Market() {
             <hr className='hr' />
             <div className='side-bar-l fs-6'>
               <ul>
-                <li className='shadow-lg'><a href="#veg">Vegetables</a></li>
-                <li className='shadow-lg'><a href="#fru">Fruits</a></li>
-                <li className='shadow-lg'><a href="#dfru">Dry Fruits</a></li>
+                <li><Button className='shadow-lg' variant='outline-success' onClick={() => setactive('veg')}>Vegetables</Button></li>
+                <li><Button className='shadow-lg' variant='outline-success' onClick={() => setactive('fruit')}>Fruits</Button></li>
+                <li><Button className='shadow-lg' variant='outline-success' onClick={() => setactive('dfruit')}>Dry Fruits</Button></li>
               </ul>
             </div>
           </Col>
@@ -65,35 +82,24 @@ export default function Market() {
             <div>
               <Row className='m-0'>
                 <Col xs={10}>
-                  <Form className="d-flex my-3" >
+                  <Form className="d-flex my-3 shadow-sm" >
                     <Form.Control
                       type="search"
                       placeholder="Search"
                       className="me-2"
                       aria-label="Search"
                     />
-                    <Button variant="outline-success">Search</Button>
+                    <Button className='shadow-sm' variant="outline-success">Search</Button>
                   </Form>
                 </Col>
                 <Col xs={2}>
-                  <Button className='mt-3 d-flex' variant='outline-success' href="#"><span className='mx-auto'>Cart 🛒</span></Button>
+                  <Button className='mt-3 d-flex shadow-sm' variant='outline-success' href="#"><span className='mx-auto'>Cart 🛒</span></Button>
                 </Col>
               </Row>
               <Row className='m-0'>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-              </Row>
-              <Row className='m-0'>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
-                <Col xs={2}><Cartshop /></Col>
+                {active === 'veg' && vdata.map(ncard)}
+                {active === 'fruit' && fdata.map(ncard)}
+                {active === 'dfruit' && <h1>dFruit</h1>}
               </Row>
             </div>
           </Col>

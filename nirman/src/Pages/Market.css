@@ -12,26 +12,17 @@
 
 }
 
-.side-bar-l ul li a {
-    text-decoration: none;
-    color: black;
-
-}
-
 .side-bar-l ul li {
     padding: 7px 0px;
-    border: 2px solid rgb(45, 163, 45);
-    border-radius: 15px;
     text-align: center;
     margin: 7px auto;
+}
+
+.side-bar-l ul li button {
     width: 60%;
-    cursor: pointer;
 }
 
 .hr {
     border-top: 3px solid black;
     margin: auto;
 }
-
-
-
