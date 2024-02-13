@@ -1,7 +1,5 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-// import ct from './images/img-ct-1.jpg';
-import '../Components/Cartshop.css';
 import { Card } from 'react-bootstrap';
 
 

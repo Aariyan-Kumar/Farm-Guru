@@ -13,7 +13,7 @@ import fdata from '../Components/fdata';
 
 function ncard(val) {
   return (
-    <Col xs={2}>
+    <Col>
       <Cartshop
         imgsrc={val.imgsrc}
         tittle={val.Title}
