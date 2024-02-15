@@ -10,6 +10,7 @@ import s2 from './images/img-s-2.jpg';
 import s3 from './images/img-s-3.jpg';
 import vdata from '../Components/vdata';
 import fdata from '../Components/fdata';
+import { useNavigate } from 'react-router-dom';
 
 function ncard(val) {
   return (
@@ -26,14 +27,14 @@ function ncard(val) {
 export default function Market() {
 
   const [active, setactive] = useState("veg");
-
+  const navigate = useNavigate();
 
   return (
     <>
       <Header />
       <Container fluid className='market-cont mw-100'>
         <Row>
-          <Col className='side-bar-cont' xs={2}>
+          <Col className='side-bar-cont' >
             <h5 className='text-center fs-3 m-2'>Products</h5>
             <hr className='hr' />
             <div className='side-bar-l fs-6'>
@@ -44,7 +45,7 @@ export default function Market() {
               </ul>
             </div>
           </Col>
-          <Col className='main-frame-cont p-0' xs={10}>
+          <Col className='main-frame-cont p-0' >
             <Carousel className='m-0 p-0 object-fit-none'>
               <Carousel.Item >
                 <img src={s1} alt="slide-img-1" height={350} width={1300} />
@@ -81,7 +82,7 @@ export default function Market() {
             </Carousel>
             <div>
               <Row className='m-0'>
-                <Col xs={10}>
+                <Col>
                   <Form className="d-flex my-3 shadow-sm" >
                     <Form.Control
                       type="search"
@@ -93,7 +94,7 @@ export default function Market() {
                   </Form>
                 </Col>
                 <Col xs={2}>
-                  <Button className='mt-3 d-flex shadow-sm' variant='outline-success' href="#"><span className='mx-auto'>Cart 🛒</span></Button>
+                  <Button className='mt-3 d-flex shadow-sm mx-auto' variant='outline-success' onClick={() => navigate('/Market/Cart')}><span className='mx-auto'>Cart 🛒</span></Button>
                 </Col>
               </Row>
               <Row className='m-0'>

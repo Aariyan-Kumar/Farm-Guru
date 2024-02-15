@@ -1,11 +1,17 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { Card } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 export default function cartshop(props) {
-    console.log(props);
+
+    function message() {
+        toast.success("item added sucessfully");
+    }
+
     return (
         <>
             <Card style={{ width: '12rem' }} className='shadow my-2'>
@@ -15,7 +21,8 @@ export default function cartshop(props) {
                     <Card.Text>
                         {props.price}
                     </Card.Text>
-                    <Button variant="success">Add to Cart</Button>
+                    <Button variant="success" onClick={message}>Add to Cart</Button>
+                    <ToastContainer />
                 </Card.Body>
             </Card>
         </>

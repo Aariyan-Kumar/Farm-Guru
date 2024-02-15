@@ -7,6 +7,7 @@ import Rentals from '../src/Pages/Rentals';
 import Tutorials from '../src/Pages/Tutorials';
 import Aboutus from '../src/Pages/Aboutus';
 import Home from '../src/Pages/Home';
+import Cart from '../src/Pages/Cart'
 import { Route, Routes } from "react-router";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/Market' element={<Market />}></Route>
         <Route path='/Rentals' element={<Rentals />}></Route>
         <Route path='/Weather' element={<Weather />}></Route>
+        <Route path='/Market/Cart' element={<Cart />}></Route>
       </Routes>
     </>
   );
