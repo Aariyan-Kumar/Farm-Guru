@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Image, Button } from 'react-bootstrap';
 import './CartItem.css';
 
 
 export default function CartItem() {
+
+    let price = 100.00, qunatity = 0;
+    const [add, setadd] = useState(qunatity);
+
+    const inc = () => {
+        if (add !== 10) {
+
+            setadd(add + 1);
+
+        }
+    }
+
+    const dec = () => {
+        if (add !== 0) {
+            setadd(add - 1);
+        }
+    }
+
     return (
         <>
-            <h1 className='text-center'>The Cart</h1>
-            <div className='cart-item-cont'>
+            <div className='cart-item-cont mx-3 '>
                 <Container >
-                    <Row>
-                        <Col className='mx-3'>
+                    <Row className='shadow item'>
+                        <Col xs={7} className='mx-3'>
                             <Card className="d-flex flex-sm-row border-0 " style={{ height: 'auto' }} >
                                 <Image
                                     style={{ objectFit: 'cover', maxWidth: '100%', height: 'auto', width: '150px' }}
@@ -25,14 +42,19 @@ export default function CartItem() {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col xs={1} className='my-auto'>
+                        <Col className='my-auto'>
                             <h5>price</h5>
-                            <p>₹XX.XX</p>
+                            <p>₹{price}.00</p>
                         </Col>
-                        <Col className='my-auto' inline>
-                            <Button variant='outline-success'>-</Button>
-                            <span className='m-2 sp'>x</span>
-                            <Button variant='outline-success'>+</Button>
+                        <Col className='my-auto'>
+                            <h5>Quantity</h5>
+                            <Button onClick={dec} variant='outline-success'>-</Button>
+                            <span className='m-2 sp'>{add}</span>
+                            <Button onClick={inc} variant='outline-success'>+</Button>
+                        </Col>
+                        <Col className='my-auto'>
+                            <h5>Total price</h5>
+                            <p>₹{add * price}.00</p>
                         </Col>
                     </Row>
                 </Container>

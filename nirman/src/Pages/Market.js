@@ -10,6 +10,7 @@ import s2 from './images/img-s-2.jpg';
 import s3 from './images/img-s-3.jpg';
 import vdata from '../Components/vdata';
 import fdata from '../Components/fdata';
+import dfdata from '../Components/dfdata';
 import { useNavigate } from 'react-router-dom';
 
 function ncard(val) {
@@ -100,7 +101,7 @@ export default function Market() {
               <Row className='m-0'>
                 {active === 'veg' && vdata.map(ncard)}
                 {active === 'fruit' && fdata.map(ncard)}
-                {active === 'dfruit' && <h1>dFruit</h1>}
+                {active === 'dfruit' && dfdata.map(ncard)}
               </Row>
             </div>
           </Col>

@@ -14,7 +14,10 @@ export default function Cart() {
             <Container className='mw-100'>
                 <Row>
                     <Col className='p-0'>
-                        <div className='cart-cont mx-auto'>
+                        <h1 className='text-center'>The Cart</h1>
+                        <div className='cart-cont p-2 mx-3 '>
+                            <CartItem />
+                            <CartItem />
                             <CartItem />
                         </div>
                         <div className='text-end m-3'>
