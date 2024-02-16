@@ -19,7 +19,7 @@ export default function cartshop(props) {
                 <Card.Body>
                     <Card.Title>{props.tittle}</Card.Title>
                     <Card.Text>
-                        {props.price}
+                        ₹{props.price} kg
                     </Card.Text>
                     <Button variant="success" onClick={message}>Add to Cart</Button>
                     <ToastContainer />

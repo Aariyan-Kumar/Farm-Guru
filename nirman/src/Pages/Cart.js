@@ -18,7 +18,7 @@ export default function Cart() {
                         <div className='cart-cont p-2 mx-3 '>
                             <CartItem />
                             <CartItem />
-                            <CartItem />
+                            <CartItem />                           
                         </div>
                         <div className='text-end m-3'>
                             <Button variant='outline-success' onClick={() => navigate(-1)}>Go Back to Market</Button>
