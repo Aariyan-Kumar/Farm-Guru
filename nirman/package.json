@@ -14,13 +14,10 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
     "react-slick": "^0.30.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.8",
-=======
     "react-toastify": "^10.0.4",
->>>>>>> 0cc4d5963070ae7e63a8965c63b9aa7a345025fc
     "web-vitals": "^2.1.4"
   },
   "scripts": {
