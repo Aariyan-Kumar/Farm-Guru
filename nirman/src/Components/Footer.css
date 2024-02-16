@@ -22,20 +22,25 @@ footer {
 .right-f-link a {
     text-decoration: none;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 .f-heading {
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: Poppins, sans-serif;
+    padding-top: 20px;
 }
 
-.hr {
+.hrl {
     width: 75%;
+    color: white;
+    border-top: 3px solid white;
+    margin-left: 190px;
 }
 
 .follow-f-cont {
     margin-left: 300px;
+    padding: 7px;
 }
 
 .follow-f-cont ul {
@@ -57,5 +62,5 @@ footer {
 .follow-f-heading {
     color: white;
     margin: 5px 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Poppins, sans-serif;
 }

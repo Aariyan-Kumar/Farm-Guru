@@ -27,7 +27,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-                <hr className='hr' />
+                <hr className='hrl' />
                 <div className="follow-f-cont">
                     <h4 className='follow-f-heading'>Follow Us</h4>
                     <ul>
