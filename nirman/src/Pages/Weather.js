@@ -56,11 +56,11 @@ export default function Weather() {
             case '11d':
                 return 'url("https://images.unsplash.com/photo-1600323847785-fe21bc36acdf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFpbiUyQyUyMHRodW5kZXJzdG9ybXxlbnwwfHwwfHx8MA%3D%3D")';
             case '13d':
-                return 'url("https://img.freepik.com/free-photo/floral-winter-watercolor-background-blue-with-beautiful-snow_53876-128740.jpg?w=996&t=st=1708199909~exp=1708200509~hmac=722d398b028a78d0039c8505c05c81ae841df09bea5308e574fc1aa912ebec62")';
+                return 'url("https://www.vmcdn.ca/f/files/via/images/weather/vancouver-weather-forecast-december-2021-snowfall.jpg;w=960")';
             case '50d':
                 return 'url("https://c1.wallpaperflare.com/preview/1002/896/900/foggy-mountains-nature-fog.jpg")';
             default:
-                return 'url("https://img.freepik.com/free-vector/blue-sky-with-clouds-background-elegant_1017-26302.jpg?w=996&t=st=1708196644~exp=1708197244~hmac=5192111c5e18c8f27b8eff0a6646f6bef814448835ccaa9dbb5429f5ae72ef7b")';
+                return 'url("https://img.freepik.com/free-vector/blue-sky-with-clouds-background-elegant_1017-26302.jpg?w=996&t=st=1708202012~exp=1708202612~hmac=8c95e666f8566e1b9b658efeb286d247fdc541be08dfc9ab42c6a945498b2e1d")';
         }
     }, []);
 
