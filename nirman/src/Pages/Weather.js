@@ -7,6 +7,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Weather.css';
+import cloudy2 from '../Pages/images/cloudy2.jpg';
+import rainy3 from '../Pages/images/rainy3.jpg';
+import sunny1 from '../Pages/images/sunny1.jpg';
+import thunderstorm4 from '../Pages/images/thunderstorm4.jpg';
+import snowy5 from '../Pages/images/snowy5.jpg';
+import foggy6 from '../Pages/images/foggy6.jpg';
 
 const API_KEY = '88939f44c6bda2a77f49d29e14f2e8b8';
 const API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
@@ -45,24 +51,46 @@ export default function Weather() {
         // Background image switch cases
         switch (weatherIcon) {
             case '01d':
-                return 'url("https://images.unsplash.com/photo-1511836536898-6d6f1b8f6948?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VubnklMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww")';
+                return `url(${sunny1})`;
+            case '01n':
+                return `url(${sunny1})`;
             case '02d':
+                return `url(${cloudy2})`;
             case '03d':
+                return `url(${cloudy2})`;
             case '04d':
-                return 'url("https://wallpaperset.com/w/full/d/f/5/137181.jpg")';
+                return `url(${cloudy2})`;
+            case '02n':
+                return `url(${cloudy2})`;
+            case '03n':
+                return `url(${cloudy2})`;
+            case '04n':
+                return `url(${cloudy2})`;
             case '09d':
-            case '10d':
-                return 'url("https://cdn.pixabay.com/photo/2014/04/05/11/39/rain-316579_1280.jpg")';
+                return `url(${rainy3})`;
+            case '09n':
+                return `url(${rainy3})`;
+            case '10d': 
+                return `url(${rainy3})`; 
+            case '10n': 
+                return `url(${rainy3})`;
             case '11d':
-                return 'url("https://images.unsplash.com/photo-1600323847785-fe21bc36acdf?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFpbiUyQyUyMHRodW5kZXJzdG9ybXxlbnwwfHwwfHx8MA%3D%3D")';
+                return `url(${thunderstorm4})`;
+            case '11n':
+                return `url(${thunderstorm4})`;
             case '13d':
-                return 'url("https://www.vmcdn.ca/f/files/via/images/weather/vancouver-weather-forecast-december-2021-snowfall.jpg;w=960")';
+                return `url(${snowy5})`;
             case '50d':
-                return 'url("https://c1.wallpaperflare.com/preview/1002/896/900/foggy-mountains-nature-fog.jpg")';
+                return `url(${foggy6})`;
+            case '13n':
+                return `url(${snowy5})`;
+            case '50n':
+                return `url(${foggy6})`;
             default:
-                return 'url("https://img.freepik.com/free-vector/blue-sky-with-clouds-background-elegant_1017-26302.jpg?w=996&t=st=1708202012~exp=1708202612~hmac=8c95e666f8566e1b9b658efeb286d247fdc541be08dfc9ab42c6a945498b2e1d")';
+                return 'url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
         }
     }, []);
+    
 
     const fetchWeatherDataByCity = useCallback(async (cityName) => {
         setLoading(true);
