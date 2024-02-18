@@ -3,16 +3,17 @@ import { Container, Row, Col, Card, Image, Button } from 'react-bootstrap';
 import './CartItem.css';
 
 
-export default function CartItem() {
-
-    let price = 100.00, qunatity = 0;
+export default function CartItem(cartItems) {
+    const { id, imgsrc, tittle, price, onDelete } = cartItems;
+    let qunatity = 1;
     const [add, setadd] = useState(qunatity);
+    // const [cart, setCart] = useState(cartItems);
+
 
     const inc = () => {
         if (add !== 10) {
 
             setadd(add + 1);
-
         }
     }
 
@@ -22,29 +23,33 @@ export default function CartItem() {
         }
     }
 
+    let x = add * cartItems.price;
+
+
+
     return (
         <>
             <div className='cart-item-cont mx-3 '>
                 <Container >
                     <Row className='shadow item'>
-                        <Col xs={7} className='mx-3'>
+                        <Col xs={6} className='mx-3'>
                             <Card className="d-flex flex-sm-row border-0 " style={{ height: 'auto' }} >
                                 <Image
                                     style={{ objectFit: 'cover', maxWidth: '100%', height: 'auto', width: '150px' }}
-                                    src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                                    src={cartItems.imgsrc}
                                     alt="Caffe Latte"
                                 />
                                 <Card.Body>
-                                    <Card.Title as="h5">The perfect latte</Card.Title>
+                                    <Card.Title as="h5">{cartItems.tittle}</Card.Title>
                                     <Card.Text>
-                                        Caffè latte is a coffee beverage of Italian origin made with espresso and steamed milk.
+                                        {cartItems.tittle}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col className='my-auto'>
                             <h5>price</h5>
-                            <p>₹{price}.00</p>
+                            <p>₹{cartItems.price} Kg</p>
                         </Col>
                         <Col className='my-auto'>
                             <h5>Quantity</h5>
@@ -53,8 +58,11 @@ export default function CartItem() {
                             <Button onClick={inc} variant='outline-success'>+</Button>
                         </Col>
                         <Col className='my-auto'>
-                            <h5>Total price</h5>
-                            <p>₹{add * price}.00</p>
+                            <h5>Sub Total price</h5>
+                            <p>₹{x}</p>
+                        </Col>
+                        <Col className='my-auto'>
+                            <Button variant='outline-danger' onClick={() => onDelete({ id, imgsrc, tittle, price })}>X</Button>
                         </Col>
                     </Row>
                 </Container>

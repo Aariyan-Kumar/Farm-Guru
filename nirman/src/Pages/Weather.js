@@ -3,7 +3,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Container, Card, Form, Button, Row, Col } from 'react-bootstrap';
 import Slider from 'react-slick';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Weather.css';
@@ -131,6 +131,7 @@ export default function Weather() {
         <>
             <Header />
             <div className="weather-background" style={{ backgroundImage: backgroundImage }}>
+                <h1 className='text-center'>Today's Weather</h1>
                 <Container className="mt-4" style={{ marginBottom: '50px' }}>
                     {/* Search form */}
                     <Form className="d-flex">
@@ -148,7 +149,7 @@ export default function Weather() {
                     </Form>
                 </Container>
                 {searched && (
-                    <Container className="mt-4">
+                    <Container className="mt-4 p-3">
                         {/* Display weather forecast */}
                         {loading ? (
                             <p>Loading...</p>

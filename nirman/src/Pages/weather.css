@@ -26,25 +26,27 @@
     border-top: 3px solid black;
     margin: auto;
 }
+
 .weather-background {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    margin-top: -20px; /* Adjust the margin to remove the gap */
-    padding-top: 20px; /* Optionally adjust padding to maintain spacing */
-    margin-bottom: -20px;
-  }
+    margin-top: 0px;
+    /* Adjust the margin to remove the gap */
+    padding-top: 20px;
+    /* Optionally adjust padding to maintain spacing */
+    margin-bottom: 0px;
+}
 
 /* Weather.css */
 /* Weather.css */
 .weather-card {
-    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
-    border: none; /* Remove borders if needed */
-    margin-bottom: 20px; /* Add margin at the bottom of each card */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* White with 70% opacity */
+    border: none;
+    /* Remove borders if needed */
+    margin-bottom: 20px;
+    /* Add margin at the bottom of each card */
     padding: 20px;
 }
-  
-  
-  
-

@@ -13,23 +13,36 @@ import fdata from '../Components/fdata';
 import dfdata from '../Components/dfdata';
 import { useNavigate } from 'react-router-dom';
 
-function ncard(val) {
-  return (
-    <Col>
-      <Cartshop
-        imgsrc={val.imgsrc}
-        tittle={val.Title}
-        price={val.price}
-      />
-    </Col>
-  )
-}
+
+
+
+
 
 export default function Market() {
 
   const [active, setactive] = useState("veg");
+  const [cartItems, setCartItems] = useState([])
   const navigate = useNavigate();
 
+  const addToCart = (cartObj) => {
+    cartItems.push(cartObj);
+    setCartItems(cartItems);
+    // console.log(cartItems);
+  }
+
+  function ncard(val) {
+    return (
+      <Col>
+        <Cartshop
+          id={val.id}
+          imgsrc={val.imgsrc}
+          tittle={val.Title}
+          price={val.price}
+          onAdd={addToCart}
+        />
+      </Col>
+    )
+  }
   return (
     <>
       <Header />
@@ -95,7 +108,7 @@ export default function Market() {
                   </Form>
                 </Col>
                 <Col xs={2}>
-                  <Button className='mt-3 d-flex shadow-sm mx-auto' variant='outline-success' onClick={() => navigate('/Market/Cart')}><span className='mx-auto'>Cart 🛒</span></Button>
+                  <Button className='mt-3 d-flex shadow-sm mx-auto' variant='outline-success' onClick={() => navigate('/Market/Cart', { state: { cartItems: cartItems } })}><span className='mx-auto'>Cart 🛒</span></Button>
                 </Col>
               </Row>
               <Row className='m-0'>
