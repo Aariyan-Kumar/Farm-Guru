@@ -31,24 +31,6 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-<<<<<<< HEAD
-    margin-top: 0px;
-    /* Adjust the margin to remove the gap */
-    padding-top: 20px;
-    /* Optionally adjust padding to maintain spacing */
-    margin-bottom: 0px;
-}
-
-/* Weather.css */
-/* Weather.css */
-.weather-card {
-    background-color: rgba(255, 255, 255, 0.7);
-    /* White with 70% opacity */
-    border: none;
-    /* Remove borders if needed */
-    margin-bottom: 20px;
-    /* Add margin at the bottom of each card */
-=======
     margin-top: 0px; 
     padding-top: 20px; 
     margin-bottom: 0px;
@@ -57,6 +39,5 @@
     background-color: rgba(255, 255, 255, 0.7); 
     border: none; 
     margin-bottom: 20px; 
->>>>>>> f9efc8bba59ca8a3d831868a1431d7e33e0665cc
     padding: 20px;
 }
