@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 .market-cont {
     font-family: Poppins, sans-serif;
 }
@@ -31,17 +30,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    margin-top: -20px; /* Adjust the margin to remove the gap */
-    padding-top: 20px; /* Optionally adjust padding to maintain spacing */
-    margin-bottom: -20px;
+    margin-top: 0px; 
+    padding-top: 20px; 
+    margin-bottom: 0px;
   }
-
-/* Weather.css */
-/* Weather.css */
 .weather-card {
-    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
-    border: none; /* Remove borders if needed */
-    margin-bottom: 20px; /* Add margin at the bottom of each card */
+    background-color: rgba(255, 255, 255, 0.7); 
+    border: none; 
+    margin-bottom: 20px; 
     padding: 20px;
 }
   
