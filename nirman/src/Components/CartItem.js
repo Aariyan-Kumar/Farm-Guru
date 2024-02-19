@@ -27,9 +27,6 @@ export default function CartItem(item) {
 
     }
 
-    const handleQuantityChange = (valnew) => {
-
-    }
 
     return (
         <>
@@ -58,7 +55,7 @@ export default function CartItem(item) {
                         <Col className='my-auto'>
                             <h5>Quantity</h5>
                             <Button onClick={() => dec()} variant='outline-success'>-</Button>
-                            <span className='m-2 sp' onChange={handleQuantityChange()}>{quantity}</span>
+                            <span className='m-2 sp'>{quantity}</span>
                             <Button onClick={() => inc()} variant='outline-success'>+</Button>
                         </Col>
                         <Col className='my-auto'>
