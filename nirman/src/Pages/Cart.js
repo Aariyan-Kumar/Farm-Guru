@@ -15,6 +15,7 @@ export default function Cart() {
     const [updatecart, setupdatecart] = useState(cartItems);
 
     // console.log(cartItems);
+
     const navigate = useNavigate();
 
 
@@ -28,6 +29,19 @@ export default function Cart() {
 
     }
 
+
+    const updateQuantity = (tittle, newQuantity) => {
+        const newCart = updatecart.map((item) => (item.tittle === tittle) ? { ...item, quantity: newQuantity } : item);
+        setupdatecart(newCart);
+    };
+
+
+    const calculateTotal = () => {
+        return updatecart.reduce((total, item) => total + item.price * item.quantity, 0);
+    };
+
+
+
     return (
         <>
             <Header />
@@ -38,12 +52,14 @@ export default function Cart() {
                         <div className='cart-cont p-2 mx-3 '>
                             {
 
-                                updatecart.map((item) => (<CartItem
+                                updatecart.map((item) => (<CartItem key={item.tittle}
                                     id={item.id}
                                     imgsrc={item.imgsrc}
                                     tittle={item.tittle}
                                     price={item.price}
+                                    quantity={item.quantity}
                                     onDelete={deleteitems}
+                                    onUpdateQuantity={updateQuantity}
                                 />))
                             }
                         </div>
@@ -73,7 +89,7 @@ export default function Cart() {
                             <Col className='mb-3'>
                                 <div className='shadow total-cont text-center'>
                                     <h3 className='text-center mt-3 p-2'>Cart Total</h3>
-                                    <h2 className='mx-3 p-2'>Total : ₹XX.XX</h2>
+                                    <h2 className='mx-3 p-2'>Total : ₹{calculateTotal().toFixed(2)}</h2>
                                     <Button className='my-3 p-2' variant='outline-success'>Pay Now</Button>
                                 </div>
                             </Col>

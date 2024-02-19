@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col, Card, Image, Button } from 'react-bootstrap';
 import './CartItem.css';
 
 
-export default function CartItem(cartItems) {
-    const { id, imgsrc, tittle, price, onDelete } = cartItems;
-    let qunatity = 1;
-    const [add, setadd] = useState(qunatity);
-    // const [cart, setCart] = useState(cartItems);
+export default function CartItem(item) {
+    const { id, imgsrc, tittle, price, quantity, onDelete, onUpdateQuantity } = item;
+    let qnt = quantity;
+
 
 
     const inc = () => {
-        if (add !== 10) {
+        const newQuantity = ++qnt;
+        onUpdateQuantity(tittle, newQuantity)
 
-            setadd(add + 1);
-        }
     }
 
     const dec = () => {
-        if (add !== 0) {
-            setadd(add - 1);
+        if (qnt === 1) {
+            onDelete({ id, imgsrc, tittle, price, quantity })
         }
+        else{
+            const newQuantity = --qnt;
+            onUpdateQuantity(tittle, newQuantity)
+        }
+        
+
     }
 
-    let x = add * cartItems.price;
+    const handleQuantityChange = (valnew) => {
 
-
+    }
 
     return (
         <>
@@ -36,33 +40,33 @@ export default function CartItem(cartItems) {
                             <Card className="d-flex flex-sm-row border-0 " style={{ height: 'auto' }} >
                                 <Image
                                     style={{ objectFit: 'cover', maxWidth: '100%', height: 'auto', width: '150px' }}
-                                    src={cartItems.imgsrc}
+                                    src={item.imgsrc}
                                     alt="Caffe Latte"
                                 />
                                 <Card.Body>
-                                    <Card.Title as="h5">{cartItems.tittle}</Card.Title>
+                                    <Card.Title as="h5">{item.tittle}</Card.Title>
                                     <Card.Text>
-                                        {cartItems.tittle}
+                                        {item.tittle}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col className='my-auto'>
                             <h5>price</h5>
-                            <p>₹{cartItems.price} Kg</p>
+                            <p>₹{item.price} Kg</p>
                         </Col>
                         <Col className='my-auto'>
                             <h5>Quantity</h5>
-                            <Button onClick={dec} variant='outline-success'>-</Button>
-                            <span className='m-2 sp'>{add}</span>
-                            <Button onClick={inc} variant='outline-success'>+</Button>
+                            <Button onClick={() => dec()} variant='outline-success'>-</Button>
+                            <span className='m-2 sp' onChange={handleQuantityChange()}>{quantity}</span>
+                            <Button onClick={() => inc()} variant='outline-success'>+</Button>
                         </Col>
                         <Col className='my-auto'>
                             <h5>Sub Total price</h5>
-                            <p>₹{x}</p>
+                            <p>₹{(quantity * price).toFixed(2)}</p>
                         </Col>
                         <Col className='my-auto'>
-                            <Button variant='outline-danger' onClick={() => onDelete({ id, imgsrc, tittle, price })}>X</Button>
+                            <Button variant='outline-danger' onClick={() => onDelete({ id, imgsrc, tittle, price, quantity })}>x</Button>
                         </Col>
                     </Row>
                 </Container>

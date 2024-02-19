@@ -38,6 +38,7 @@ export default function Market() {
           imgsrc={val.imgsrc}
           tittle={val.Title}
           price={val.price}
+          quantity={val.quantity}
           onAdd={addToCart}
         />
       </Col>

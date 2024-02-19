@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function cartshop(props) {
-    const { id, imgsrc, tittle, price, onAdd } = props;
+    const { id, imgsrc, tittle, price, quantity, onAdd } = props;
     const message = () => {
         toast.success("item added sucessfully")
     }
@@ -21,7 +21,7 @@ export default function cartshop(props) {
                     <Card.Text>
                         ₹{props.price} kg
                     </Card.Text>
-                    <Button variant="success" onClick={() => { message(); onAdd({ id, imgsrc, tittle, price }) }}>Add to Cart</Button>
+                    <Button variant="success" onClick={() => { message(); onAdd({ id, imgsrc, tittle, price, quantity }) }}>Add to Cart</Button>
                     <ToastContainer />
                 </Card.Body>
             </Card>
