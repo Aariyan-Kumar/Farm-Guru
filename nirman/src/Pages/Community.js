@@ -6,7 +6,7 @@ export default function Community() {
     return (
         <>
             <Header />
-            <h1>Coummunity Page</h1>
+            <h1>Community Page</h1>
             <Footer />
 
         </>
