@@ -9,6 +9,8 @@ import Aboutus from '../src/Pages/Aboutus';
 import Home from '../src/Pages/Home';
 import Cart from '../src/Pages/Cart'
 import { Route, Routes } from "react-router";
+import 'bootstrap/dist/css/bootstrap.css'
+import Signup from './Pages/Signup'
 function App() {
 
   return (
@@ -23,9 +25,15 @@ function App() {
         <Route path='/Rentals' element={<Rentals />}></Route>
         <Route path='/Weather' element={<Weather />}></Route>
         <Route path='/Market/Cart' element={<Cart />}></Route >
+        <Route path='/Weather' element={<Weather />}></Route> 
+        <Route path='/Signup' element={<Signup />}></Route> 
+
       </Routes>
     </>
   );
 }
 
 export default App;
+
+
+
