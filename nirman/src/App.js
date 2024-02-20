@@ -1,4 +1,3 @@
-import './App.css';
 import Market from '../src/Pages/Market';
 import Weather from '../src/Pages/Weather';
 import Login from '../src/Pages/Login';
